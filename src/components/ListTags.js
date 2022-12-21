@@ -10,6 +10,18 @@ const TAG = [
     id: 1,
     name: 'Your Friends',
   },
+  {
+    id: 2,
+    name: 'Your Friends',
+  },
+  {
+    id: 3,
+    name: 'Your Friends',
+  },
+  {
+    id: 4,
+    name: 'Your Friends',
+  },
 ];
 
 const renderItem = ({item, index}) => {
@@ -27,6 +39,8 @@ const ListTags = () => {
   return (
     <FlatList
     horizontal={true}
+    showsHorizontalScrollIndicator={false}
+    scrollEnabled={true}
       data={TAG}
       keyExtractor={item => item.id.toString()}
       renderItem={renderItem}
