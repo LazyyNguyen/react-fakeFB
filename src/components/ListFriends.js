@@ -2,6 +2,7 @@ import React from 'react';
 import {View, FlatList, StyleSheet, Text, Image} from 'react-native';
 
 import MyButton from './MyButton';
+import ListTags from './ListTags';
 
 const DATA = [
   {
@@ -36,6 +37,14 @@ const DATA = [
   },
 ];
 
+const ListHeaderComponent = () => {
+  return (
+    <View style={{}}>
+      <Text style={styles.title}>Friends</Text>
+      <ListTags />
+    </View>
+  );
+};
 const renderItem = ({item, index}) => {
   return (
     <View key={index} style={styles.container}>
@@ -59,22 +68,19 @@ const renderItem = ({item, index}) => {
     </View>
   );
 };
-const ListHeaderComponent = () => {
-  return <Text style={styles.title}>Friends</Text>;
-};
 
 const ListFriends = () => {
   return (
     <FlatList
       ListHeaderComponent={ListHeaderComponent}
       data={DATA}
-      contentContainerStyle={DATA.length ? styles.centerEmptySet : null}
+      contentContainerStyle={DATA.length ? styles.wrapper : styles.centerEmptySet}
       keyExtractor={item => item.id.toString()}
       renderItem={renderItem}
       ListEmptyComponent={() =>
         DATA.length ? (
           <View style={styles.centerEmptySet}>
-          <Text style={styles.emptyMessageStyle}>The list is empty</Text>
+            <Text style={styles.emptyMessageStyle}>The list is empty</Text>
           </View>
         ) : null
       }
@@ -83,7 +89,8 @@ const ListFriends = () => {
 };
 
 const styles = StyleSheet.create({
-  centerEmptySet:{
+  wrapper: {marginVertical: 8, marginHorizontal: 16},
+  centerEmptySet: {
     flexGrow: 1,
     justifyContent: 'center',
   },
@@ -91,9 +98,8 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   container: {
-    padding: 10,
-    marginVertical: 8,
-    marginHorizontal: 16,
+    marginBottom:10,
+    marginTop:10,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignContent: 'center',
@@ -104,7 +110,6 @@ const styles = StyleSheet.create({
     color: 'black',
     fontSize: 25,
     fontWeight: '500',
-    
   },
   button: {
     flexDirection: 'row',
