@@ -3,39 +3,8 @@ import {View, FlatList, StyleSheet, Text, Image} from 'react-native';
 
 import MyButton from './MyButton';
 import ListTags from './ListTags';
+import DATA from './DATA'
 
-const DATA = [
-  {
-    id: 0,
-    name: 'Khánh Linh',
-    avatar: require('../assets/images/avatar.jpg'),
-  },
-  {
-    id: 1,
-    name: 'Khánh Linh',
-    avatar: require('../assets/images/avatar.jpg'),
-  },
-  {
-    id: 2,
-    name: 'Khánh Linh',
-    avatar: require('../assets/images/avatar.jpg'),
-  },
-  {
-    id: 3,
-    name: 'Khánh Linh',
-    avatar: require('../assets/images/avatar.jpg'),
-  },
-  {
-    id: 4,
-    name: 'Khánh Linh',
-    avatar: require('../assets/images/avatar.jpg'),
-  },
-  {
-    id: 5,
-    name: 'Khánh Linh',
-    avatar: require('../assets/images/avatar.jpg'),
-  },
-];
 
 const ListHeaderComponent = () => {
   return (
@@ -62,7 +31,7 @@ const renderItem = ({item, index}) => {
         <Text style={styles.name}>{item.name}</Text>
         <View style={styles.button}>
           <MyButton model="default">Confirm</MyButton>
-          <MyButton>Delete</MyButton>
+          <MyButton item={item}>Delete</MyButton>
         </View>
       </View>
     </View>
@@ -70,6 +39,7 @@ const renderItem = ({item, index}) => {
 };
 
 const ListFriends = () => {
+  
   return (
     <FlatList
       ListHeaderComponent={ListHeaderComponent}
