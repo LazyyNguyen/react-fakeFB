@@ -1,7 +1,12 @@
 import React from  'react';
-import ListFriends from './src/components/ListFriends'
+import ListFriends from './src/components/ListFriends';
+import UseState from './src/components/useState/UseState';
 
-const App =() =>{
-  return <ListFriends/>
+function App() {
+  return (
+    <ListFriends/>
+    // <UseState/>
+  );
 }
+
 export default App;
