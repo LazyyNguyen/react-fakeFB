@@ -1,12 +1,14 @@
-import React from  'react';
-import ListFriends from './src/components/ListFriends';
-import UseState from './src/components/useState/UseState';
+import React from 'react';
+import {View} from 'react-native';
+import UseImperativeHandle from './src/components/useImperativeHandle/MyInput';
+import UseLayoutEffect from './src/components/useLayoutEffect/UseLayoutEffect';
+import UseMemo from './src/components/useMemo/UseMemo';
+import UseRef from './src/components/useRef/UseRef';
 
-function App() {
+export default function App() {
   return (
-    <ListFriends/>
-    // <UseState/>
+    <View>
+    <UseMemo/>
+    </View>
   );
 }
-
-export default App;
