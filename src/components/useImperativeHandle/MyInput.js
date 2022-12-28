@@ -15,7 +15,7 @@ const MyInput = forwardRef(function MyInput(props, ref) {
     };
   }, []);
 
-  return <TextInput {...props} ref={inputRef} />;
+  return <TextInput {...props} ref={inputRef}  />;
 });
 
 export default MyInput;

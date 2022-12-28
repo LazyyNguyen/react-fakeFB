@@ -23,7 +23,7 @@ export default function UseMemo() {
   // ... we'd have to wait for expensive function when re-rendering.
   //const letterCount = computeLetterCount(word);
   return (
-    <View style={{ padding: "15px" }}>
+    <View style={{ padding: 15 }}>
       <Text>Compute number of letters (slow 🐌)</Text>
       <Text>
         "{word}" has {letterCount} letters

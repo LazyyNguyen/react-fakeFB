@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
-import ReactDOM from "react-dom/client";
 import { Text } from "react-native";
 
-function Timer() {
+function UseEffect() {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
@@ -16,4 +15,4 @@ function Timer() {
   return <Text>I've rendered {count} times!</Text>;
 }
 
-export default Timer;
+export default UseEffect;

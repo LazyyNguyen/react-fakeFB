@@ -1,6 +1,5 @@
 import { useState, useCallback } from "react";
-import ReactDOM from "react-dom/client";
-import { Button, View } from "react-native";
+import { Button, View ,Text} from "react-native";
 import Todos from "./Todos";
 
 const UseCallback = () => {
@@ -24,5 +23,5 @@ const UseCallback = () => {
     </View>
   );
 };
-export default UseCallback 
+export default UseCallback;
 
